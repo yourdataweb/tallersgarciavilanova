@@ -1,45 +1,83 @@
 # Tallers Garcia Vilanova — website
 
-Static, trilingual (Catalan default, Spanish, English) site for a car workshop and
-dealer at Ronda d'Europa, 21-23, Vilanova i la Geltrú.
+Static site for **Tallers Garcia Vilanova**, a car workshop and dealer at Ronda d'Europa, 21-23, Vilanova i la Geltrú.
+
+Three languages, server-rendered HTML per locale, plain CSS and one small
+progressive-enhancement script. No framework, no runtime dependencies.
+
+## Live site
+
+- **Catalan (default):** <https://tallersgarciavilanova.vilanovailageltru.info/>
+- **Spanish:** <https://tallersgarciavilanova.vilanovailageltru.info/es/>
+- **English:** <https://tallersgarciavilanova.vilanovailageltru.info/en/>
+
+## Page structure
+
+Hero with the phone number as the primary action, a listing photo and a "before you
+come" card. Then the work the workshop takes on, a "why trust us" section that is honest about
+the 4.1 average, three steps for booking by phone, reviews, and contact with the consent-gated
+map.
+
+## Repo layout
+
+```
+index.html                 Catalan (default locale)
+es/index.html              Spanish
+en/index.html              English
+ca/index.html              redirect to / (the default locale used to live here)
+src/template.html          the single template the build renders
+src/data.json              business data (address, phone, coordinates, rating)
+src/locales.json           locale list, which one is default, hreflang codes
+src/i18n/{ca,es,en}.json   all copy, per locale
+scripts/build.mjs          renders the locale pages + sitemap, robots, manifest
+scripts/assets.mjs         app icons and the Open Graph image
+scripts/card.mjs           handover card, 10.5 x 14.5 cm @ 300 dpi
+scripts/verify.mjs         headless checks against the built output
+assets/css/styles.css      all styles, responsive from 320 px up
+assets/js/main.js          navigation, reveal, cookie consent, lazy map
+assets/fonts/              self-hosted Fraunces and Inter (woff2 subsets)
+assets/img/                mark, icons, hero photo, OG image
+assets/photos/handover.png handover card with a QR to the live site
+.github/workflows/         deploy to S3 on push to main
+```
 
 ## Build
 
-```sh
-node scripts/build.mjs     # src/template.html + src/i18n/*.json -> index.html, es/, en/, sitemap
-node scripts/verify.mjs    # headless checks: SEO, a11y, layout, consent gate (117 assertions)
-node scripts/assets.mjs    # favicon, PWA icons, OG image
-node scripts/card.mjs      # assets/photos/handover.png, 10.5 x 14.5 cm at 300 dpi + QR
+Requires Node 20+ and `puppeteer` for the asset scripts.
+
+```bash
+node scripts/build.mjs     # render the locale pages
+node scripts/assets.mjs    # regenerate icons and og-image.jpg
+node scripts/card.mjs      # regenerate the handover card
+node scripts/verify.mjs    # headless verification of the built output
 ```
 
-`node_modules` is a symlink to a shared workspace install; nothing is committed from it.
+`build.mjs` fails on an unresolved template placeholder, an empty `href`/`src`, invalid
+JSON-LD, or a feature icon that has no entry in `scripts/icons.json`.
 
-## Structure
+## Editing content
 
-```
-src/data.json          business facts (address, phone, rating, reviews, coords)
-src/locales.json       locale list: code, output dir, hreflang, default flag
-src/i18n/<code>.json   all user-facing copy, one file per locale
-src/template.html      the page; every hole resolves from data + dictionary
-assets/css/styles.css  palette and layout
-assets/js/main.js      nav drawer, reveal-on-scroll, consent + map gate
-scripts/               build, verify, assets, card (no business values inside)
-```
+Text lives in `src/i18n/*.json`; shared business facts live in `src/data.json`. Change those,
+run `node scripts/build.mjs`, commit the regenerated HTML. Do not hand-edit the generated
+`index.html` files — they are overwritten.
 
-## Notes
+## Deploy
 
-- **Images:** the hero photo is the business's own Google listing photo, credited in the
-  caption as the attribution requires. `assets/img/mark.svg` is the logo mark used for the
-  favicon and PWA icons.
-- **Reviews:** testimonials are extracts of published Google reviews, rewritten into the
-  language of each page. Only positive reviews are quoted, and the copy states plainly that
-  the 4.1/365 average is not perfect.
-- **Privacy:** no analytics or map request is made before consent. The Google Analytics tag
-  is defined with `storage: denied` and only loads after the visitor accepts; the map iframe
-  is injected from a `<template>` on the same decision. Rejecting leaves zero third-party
-  cookies and zero requests to Google.
-- **SEO:** canonical, `og:url`, hreflang alternates and `sitemap.xml` all derive from one
-  origin constant; JSON-LD is `AutoDealer` with address, geo and aggregate rating.
-- **Accessibility:** single `h1`, skip link, visible focus rings, `aria-expanded` on the nav
-  toggle with Escape to close, all images with alt text, body text at WCAG AA contrast.
-- **No tracking of provenance:** the repository holds no data-source references or keys.
+Pushing to `main` runs `.github/workflows/deploy-aws.yml`: it builds the site, authenticates
+to AWS with OIDC (no stored keys) and uploads to
+`s3://dr-static-websites/vilanovailageltru.info/tallersgarciavilanova/`. The subdomain is served from the bucket's CDN, so a
+deploy is live within a few minutes.
+
+## Technical notes
+
+- **SEO** — per-locale `<title>`, description, canonical, reciprocal `hreflang` including
+  `x-default`, Open Graph and Twitter cards, `sitemap.xml` with alternates, `robots.txt`, and
+  `AutoRepair` structured data. Every absolute URL derives from the site's own domain.
+- **Accessibility** — one `h1` per page, skip link, landmark elements, visible focus rings,
+  body text at or above 4.5:1 contrast, `aria-expanded` on the navigation toggle, Escape
+  closes the drawer, and content stays readable with JavaScript disabled.
+- **Performance** — self-hosted woff2 subsets preloaded, one CSS file, one deferred JS file,
+  no third-party requests until the visitor opts in.
+- **Privacy** — the cookie notice offers accept and reject. Nothing is fetched from Google —
+  analytics script or map iframe — until the visitor accepts; rejecting loads neither and is
+  remembered.
