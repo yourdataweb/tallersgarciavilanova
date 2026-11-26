@@ -35,6 +35,11 @@
 <link rel="preload" href="{{meta.assetBase}}assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{meta.assetBase}}assets/css/styles.css">
 <script>
+  /* Scroll-reveal animation is opt-in: without this class every .reveal block stays
+     fully visible, so a visitor with JS blocked or broken still reads the whole page. */
+  document.documentElement.classList.add("js");
+</script>
+<script>
   /* Google Analytics 4 with consent mode. Goes in <head> of every generated page,
      before any other script. Nothing is fetched from Google until the visitor
      accepts, and storage stays denied by default even if the tag loads elsewhere. */

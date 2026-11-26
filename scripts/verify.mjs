@@ -132,6 +132,24 @@ for (const l of LANGS) {
   ok(info.quotes === Object.keys(JSON.parse(readFileSync(join(ROOT, `src/i18n/${l.code}.json`), "utf8")).reviews.items).length,
     `[${l.code}] testimonial count matches dictionary`);
 
+  // Feature cards fall back to one generic glyph when a dictionary key has no icon in
+  // scripts/icons.json. Identical icons across cards read as a copy-paste mistake, so
+  // assert every card in the visible grid has its own mark.
+  const dictForIcons = JSON.parse(readFileSync(join(ROOT, `src/i18n/${l.code}.json`), "utf8"));
+  const featureKeys = Object.keys(dictForIcons.features?.items || {});
+  const distinctIcons = await page.evaluate(() => {
+    const marks = [...document.querySelectorAll(".card .card__icon")].map((n) => n.innerHTML.trim());
+    return { total: marks.length, distinct: new Set(marks).size };
+  });
+  if (featureKeys.length && distinctIcons.total) {
+    ok(distinctIcons.total === featureKeys.length,
+      `[${l.code}] one feature card per dictionary key`,
+      `${distinctIcons.total} cards vs ${featureKeys.length} keys`);
+    ok(distinctIcons.distinct === distinctIcons.total,
+      `[${l.code}] each feature card has a distinct icon`,
+      `${distinctIcons.distinct} distinct of ${distinctIcons.total}`);
+  }
+
   // Review count rule: published only above 50, and it appears in the hero badge, the
   // stats block and the reviews header — assert the number is absent from all of them.
   const countStr = String(biz.ratingCount || "");

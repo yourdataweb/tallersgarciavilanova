@@ -41,6 +41,11 @@
 <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/styles.css">
 <script>
+  /* Scroll-reveal animation is opt-in: without this class every .reveal block stays
+     fully visible, so a visitor with JS blocked or broken still reads the whole page. */
+  document.documentElement.classList.add("js");
+</script>
+<script>
   /* Google Analytics 4 with consent mode. Goes in <head> of every generated page,
      before any other script. Nothing is fetched from Google until the visitor
      accepts, and storage stays denied by default even if the tag loads elsewhere. */
@@ -275,13 +280,13 @@
       <ul class="cards">
         
         <li class="card reveal">
-          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5l-9.4 9.4a2.5 2.5 0 0 1-3.5-3.5Z"/><path d="M14.7 6.3 17.5 3.5a4 4 0 0 1 3 6.8l-2.8 2.8"/></svg></span>
           <h3>Reparaciones de mecánica</h3>
           <p>Averías de motor, frenos, suspensión y transmisión. Nos han llegado coches que otros talleres habían rechazado y han salido resueltos.</p>
         </li>
         
         <li class="card reveal">
-          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c2.6 3.4 5 5.8 5 8.8a5 5 0 0 1-10 0c0-3 2.4-5.4 5-8.8Z"/><path d="M9.8 13.4a2.4 2.4 0 0 0 2.2 2.6"/></svg></span>
           <h3>Revisiones y cambio de aceite</h3>
           <p>Mantenimiento periódico con los intervalos del fabricante. Es el trabajo más habitual del taller y el que menos espera.</p>
         </li>
@@ -299,13 +304,13 @@
         </li>
         
         <li class="card reveal">
-          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 20 7v10l-8 4.2L4 17V7Z"/><path d="M4 7l8 4.2L20 7M12 11.2v10"/></svg></span>
           <h3>Piezas originales</h3>
           <p>Trabajamos con recambios originales. En un caso documentado, la pieza llegó en 24 horas y el coche estuvo listo en 48.</p>
         </li>
         
         <li class="card reveal">
-          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></span>
+          <span class="card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.7 4.4-1.4 7.5-5.1 7.5-9.7V6Z"/><path d="m8.8 11.8 2.2 2.2 4.2-4.4"/></svg></span>
           <h3>Garantía y factura clara</h3>
           <p>Somos taller de concesionario: las reparaciones cubiertas por garantía se tramitan aquí mismo y la factura detalla mano de obra y piezas.</p>
         </li>

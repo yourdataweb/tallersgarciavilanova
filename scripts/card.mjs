@@ -24,6 +24,10 @@ const BRAND = biz.name;
 const SITE_DOMAIN = biz.siteDomain || "vilanovailageltru.info";
 const SITE_URL = (biz.siteUrl || `https://${biz.slug}.${SITE_DOMAIN}`).replace(/\/?$/, "/");
 const LINE = "Ja tens pàgina web:";
+/* Split for print: the front half is "https://<code-name>." and the rest is "<domain>/". */
+const PROTO = (SITE_URL.match(/^[a-z]+:\/\//i) || [""])[0];
+const HOST = SITE_URL.slice(PROTO.length).split(".")[0];
+const DOMAIN_PATH = SITE_URL.slice(PROTO.length + HOST.length + 1);
 /* Palette comes from data.json so the card matches the site; the literals are only a
    fallback. A per-site edit here would defeat the point of a shared script. */
 const DEEP = biz.deep || "#0a1216";
@@ -63,7 +67,13 @@ await shotPage.setViewport({ width: RENDER_W, height: 1200, deviceScaleFactor: 2
 await shotPage.goto(BASE, { waitUntil: "networkidle2" });
 await shotPage.evaluate(() => document.fonts.ready);
 await new Promise((r) => setTimeout(r, 800));
-await shotPage.evaluate(() => document.querySelectorAll(".reveal").forEach((e) => e.classList.add("is-visible")));
+await shotPage.evaluate(() => {
+  document.querySelectorAll(".reveal").forEach((e) => e.classList.add("is-visible"));
+  /* The consent banner slides in after ~1.2 s and would be captured as an overlay on a
+     printed card. The fade happens to cover it here, but relying on that is luck: hide
+     any fixed overlay before the shot instead. */
+  document.querySelectorAll(".cookiebar").forEach((e) => { e.style.display = "none"; });
+});
 await new Promise((r) => setTimeout(r, 400));
 const shot = await shotPage.screenshot({ encoding: "base64", clip: { x: 0, y: 0, width: RENDER_W, height: 1200 } });
 writeFileSync(join(TMP, "tablet-top.png"), Buffer.from(shot, "base64"));
@@ -86,9 +96,12 @@ await cardPage.setContent(
   .fade{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 52%,${DEEP}8c 68%,${DEEP}eb 82%,${DEEP} 93%)}
   .overlay{position:absolute;left:0;right:0;bottom:0;padding:0 ${Math.round(64 * scale)}px ${Math.round(60 * scale)}px;display:flex;align-items:flex-end;gap:${Math.round(40 * scale)}px}
   .copy{flex:1 1 auto;padding-bottom:14px;min-width:0}
-  .kicker{font-weight:600;font-size:${Math.round(17 * scale)}px;letter-spacing:.2em;text-transform:uppercase;color:${GOLD};margin-bottom:${Math.round(18 * scale)}px}
-  .line{font-weight:600;font-size:${Math.round(40 * scale)}px;line-height:1.16;letter-spacing:-.02em;color:${PAPER}}
-  .url{margin-top:${Math.round(16 * scale)}px;font-weight:600;font-size:${Math.round(20 * scale)}px;line-height:1.35;color:${LIGHT};word-break:break-all}
+  .kicker{font-weight:600;font-size:${Math.round(40 * scale)}px;letter-spacing:.16em;text-transform:uppercase;color:${GOLD};margin-bottom:${Math.round(18 * scale)}px}
+  .line{font-weight:600;font-size:${Math.round(46 * scale)}px;line-height:1.16;letter-spacing:-.02em;color:${PAPER}}
+  /* Break the URL before the domain instead of mid-token: "https://name." / "domain.info/"
+     stays copyable and reads as one address across two lines. */
+  .url{margin-top:${Math.round(18 * scale)}px;font-weight:600;font-size:${Math.round(34 * scale)}px;line-height:1.3;color:${LIGHT};overflow-wrap:anywhere}
+  .url .host{display:block}
   .qr{flex:none;background:#fff;border-radius:${Math.round(22 * scale)}px;padding:${Math.round(16 * scale)}px}
   .qr img{display:block;width:${Math.round(272 * scale)}px;height:${Math.round(272 * scale)}px}
   </style></head><body>
@@ -99,7 +112,7 @@ await cardPage.setContent(
       <div class="copy">
         <div class="kicker">${esc(BRAND)}</div>
         <div class="line">${esc(LINE)}</div>
-        <div class="url">${esc(SITE_URL)}</div>
+        <div class="url"><span>${esc(`${PROTO}${HOST}.`)}</span><span class="host">${esc(DOMAIN_PATH)}</span></div>
       </div>
       <div class="qr"><img src="${qrDataUrl}" alt=""></div>
     </div>

@@ -609,9 +609,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero__cardLink:hover { text-decoration: underline; }
 
 /* ---------- services ---------- */
+/* six service cards: three per row on desktop keeps two even rows instead of a
+   lopsided 4 + 2 */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
   gap: 1rem;
 }
 .card {
@@ -812,10 +814,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 /* ---------- reviews ---------- */
+/* four testimonials: 2 x 2 reads better than three plus a widow */
 .quotes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
+}
+@media (min-width: 560px) {
+  .quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .quote {
   display: flex;
@@ -1081,18 +1087,20 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .cookiebar__reject:hover { background: var(--paper-100); }
 
 /* ---------- reveal on scroll ---------- */
-.reveal {
+/* Gated on .js: the server-rendered HTML must never ship content already faded out,
+   or a blocked/broken script leaves the page blank below the hero. */
+.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity .55s ease, transform .55s cubic-bezier(.22, 1, .36, 1);
 }
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover, .card:hover, .hero__phone:hover { transform: none; }
 }
 
@@ -1149,6 +1157,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero__phone { align-items: center; text-align: center; }
   .hero__call .btn { width: 100%; }
   .hero__aside { flex-direction: column; }
+  /* a 3.4:1 panorama collapses to a 100 px strip on a phone: crop to 16:9 instead */
+  .hero__photo img { aspect-ratio: 16 / 9; }
   .hero__card { padding: 1.2rem; }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stat { padding: 1rem .85rem; }

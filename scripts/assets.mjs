@@ -58,11 +58,21 @@ for (const size of [180, 192, 512]) {
 }
 
 /* ---- OG image 1200x630 ---- */
-const heroPath = join(OUT, "hero.svg");
+/* The card art is the business's own photo when the build copied one, because a real
+   shopfront reads better in a link preview than any generated artwork. Sites without a
+   photo fall back to assets/img/hero.svg, and a site with neither still gets the gradient. */
+const artCandidates = [
+  { path: join(ROOT, "assets/img/hero-photo.jpg"), mime: "image/jpeg" },
+  { path: join(ROOT, "assets/img/hero-photo.png"), mime: "image/png" },
+  { path: join(OUT, "hero.svg"), mime: "image/svg+xml" },
+];
 let heroUri = "";
-try {
-  heroUri = "data:image/svg+xml;base64," + readFileSync(heroPath).toString("base64");
-} catch { /* optional artwork: the gradient still renders */ }
+for (const c of artCandidates) {
+  try {
+    heroUri = `data:${c.mime};base64,` + readFileSync(c.path).toString("base64");
+    break;
+  } catch { /* try the next candidate */ }
+}
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const ratingPill = biz.rating

@@ -132,8 +132,11 @@ let heroPhoto = null;
 if (biz.heroPhoto && existsSync(biz.heroPhoto)) {
   const ext = (biz.heroPhoto.match(/\.[a-z0-9]+$/i) || [".jpg"])[0].toLowerCase();
   const dest = `assets/img/hero-photo${ext}`;
+  const destPath = join(ROOT, dest);
   mkdirSync(join(ROOT, "assets/img"), { recursive: true });
-  copyFileSync(biz.heroPhoto, join(ROOT, dest));
+  /* After the first build, data.json points at the copy inside the repo. Copying a file
+     onto itself is a no-op that some filesystems reject, so compare first. */
+  if (resolve(biz.heroPhoto) !== destPath) copyFileSync(biz.heroPhoto, destPath);
   heroPhoto = { src: dest, credit: biz.photoCredit || "", creditUrl: biz.photoCreditUrl || "" };
 } else if (biz.heroPhoto) {
   console.warn(`! heroPhoto points at a missing file: ${biz.heroPhoto} — building without it`);
