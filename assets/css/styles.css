@@ -1099,7 +1099,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ==========================================================================
    Responsive
    ========================================================================== */
-@media (max-width: 1024px) {
+@media (max-width: 1040px) {
   .hero__inner { grid-template-columns: 1fr; padding-block: clamp(2.25rem, 5vw, 3.5rem); }
   .hero__aside { flex-direction: column; }
   .about__grid,
@@ -1107,7 +1107,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1040px) {
   .nav {
     position: fixed;
     inset: 4.5rem 0 auto;
@@ -1137,16 +1137,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .langs__flag { width: 20px; height: 14px; }
 }
 
-@media (min-width: 861px) and (max-width: 1000px) {
-  .brand__name { font-size: .98rem; }
-  .nav__link { padding: .45rem .5rem; font-size: .86rem; }
-  .header__call span { display: none; }
-  .header__call { padding: .6rem .7rem; }
-  .langs__code { display: none; }
-}
-
 @media (max-width: 640px) {
   body { font-size: 1rem; }
+  /* the number no longer fits beside the brand: icon stays, the accessible name
+     and the hero's large call button carry the rest */
+  .header__call span { display: none; }
+  .header__call { padding: .62rem .74rem; }
+  .brand__name { font-size: 1rem; }
   .topbar__note { font-size: .72rem; }
   .hero__call { flex-direction: column; align-items: stretch; }
   .hero__phone { align-items: center; text-align: center; }
