@@ -1,0 +1,180 @@
+{
+  "lang": "en",
+  "locale": "en_GB",
+  "ogLocale": "en_GB",
+  "pathPrefix": "../",
+  "countryName": "Spain",
+  "meta": {
+    "title": "Tallers Garcia Vilanova · Car workshop and dealer in Vilanova i la Geltrú",
+    "description": "Car workshop and dealer on Ronda d'Europa, 21-23, Vilanova i la Geltrú. Repairs, servicing and air conditioning. Call 938 14 55 50 to book.",
+    "ogAlt": "Tallers Garcia Vilanova, car workshop in Vilanova i la Geltrú"
+  },
+  "brand": {
+    "sub": "Workshop · Vilanova i la Geltrú"
+  },
+  "nav": {
+    "skip": "Skip to main content",
+    "label": "Main navigation",
+    "services": "Services",
+    "trust": "Why us",
+    "appointment": "Book a slot",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Ronda d'Europa, 21-23 · Vilanova i la Geltrú",
+    "title": "Your car, with a workshop that answers the phone",
+    "subtitle": "Mechanics, servicing and air conditioning at a dealer workshop with its own team. Call us, tell us what's wrong and we'll give you a day to drop the car off.",
+    "callLabel": "Call the workshop",
+    "ctaSecondary": "Get directions",
+    "ratingWord": "out of 5",
+    "ratingReviews": "Google reviews",
+    "cardTitle": "Before you come",
+    "point1": "Book by phone; nothing in writing needed",
+    "point2": "Original parts and short lead times when in stock",
+    "point3": "We explain what was done and why, before you pay",
+    "viewOnGoogle": "See the listing on Google",
+    "photoAlt": "Entrance of Tallers Garcia Vilanova workshop on Ronda d'Europa, Vilanova i la Geltrú",
+    "photoCredit": "Photo"
+  },
+  "features": {
+    "eyebrow": "Services",
+    "title": "What you can bring it in for",
+    "lead": "Ordinary workshop work done with dealer equipment: from an oil change to an electrical fault other garages could not solve.",
+    "note": "If what you need is not listed here, call and we'll look at it: a two-minute call beats a wasted trip.",
+    "items": {
+      "repair": {
+        "title": "Mechanical repairs",
+        "text": "Engine, brakes, suspension and transmission faults. Cars other garages refused have arrived here and left fixed."
+      },
+      "service": {
+        "title": "Servicing and oil changes",
+        "text": "Scheduled maintenance at the manufacturer's intervals. It is the workshop's most common job and the one with the shortest wait."
+      },
+      "climate": {
+        "title": "Air conditioning and heating",
+        "text": "Regassing, finding leaks and fixing a blower or heater that stops working all at once — in summer too."
+      },
+      "diagnose": {
+        "title": "Diagnosis of tricky faults",
+        "text": "When the car does something odd and nobody can find why, we spend the time it takes rather than swapping parts blind."
+      },
+      "parts": {
+        "title": "Original parts",
+        "text": "We fit original parts. In one documented case the part arrived within 24 hours and the car was ready in 48."
+      },
+      "warranty": {
+        "title": "Warranty work and a clear invoice",
+        "text": "We are a dealer workshop, so warranty repairs are handled here and the invoice itemises labour and parts."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Why us",
+    "title": "A large workshop that still answers like a local garage",
+    "lead": "Tallers Garcia Vilanova sits on Ronda d'Europa, just off the entrance to Vilanova. It is a dealer workshop, with the parts logistics and staff that implies, but what people keep praising in the reviews is the reception desk that picks up the phone and tells you straight.",
+    "body1": "The reviews repeat the same story: someone turned up without an appointment, on holiday, with a car full of problems, and drove away fixed within a day or two. They also name Bibiana on reception, who is the person you reach when you call.",
+    "body2": "We are not the cheapest workshop and we do not pretend to be: as a dealer we work at official rates. What we do is tell you the cost before we start, and not invent work the car does not need.",
+    "trust1": "Our own mechanics, not an outsourced service chain",
+    "trust2": "Original parts with direct factory logistics",
+    "trust3": "We tell you when a repair is not worth it, before doing it",
+    "statRatingLabel": "Rating",
+    "statRating": "average on Google",
+    "statReviewsLabel": "Reviews",
+    "statReviews": "reviews in total",
+    "statTypeLabel": "Type",
+    "statTypeValue": "Dealer",
+    "statType": "workshop and sales",
+    "statPlaceLabel": "Where",
+    "statPlaceValue": "Vilanova",
+    "statPlace": "Ronda d'Europa",
+    "statsNote": "The average is 4.1 out of 5 across 365 reviews. It is not perfect and we do not dress it up: some people paid more for a repair than they expected, and we say so."
+  },
+  "menu": {
+    "eyebrow": "Book a slot",
+    "title": "How it works, in three steps",
+    "lead": "There is no booking form: the phone is faster and lets us ask what we need before you drive over.",
+    "callLabel": "Workshop phone",
+    "note": "If the car will not start or cannot be moved, say so on the call: we look at that before giving you a day.",
+    "items": {
+      "step1": {
+        "title": "Call and describe the problem",
+        "text": "A noise, a warning light, a service that is due, air that will not cool. That is usually enough for us to say whether it needs to come in."
+      },
+      "step2": {
+        "title": "We give you a day and a time",
+        "text": "We tell you which day to bring it and, for a short job, whether you can wait. If parts are needed, we say when they will arrive before taking anything apart."
+      },
+      "step3": {
+        "title": "Collect it with the bill clear",
+        "text": "When it is ready we go through what was changed and what was not. If something serious turns up mid-job, we call before carrying on."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Reviews",
+    "title": "What people who brought their car say",
+    "lead": "Extracts from reviews published on Google by customers of the workshop. There is a mix: happy customers and people who found the bill high.",
+    "readAll": "Read all reviews on Google",
+    "starsLabel": "{n} out of 5 stars",
+    "items": {
+      "r1": {
+        "text": "Great place to have my Peugeot repaired or oil changed. Very knowledgeable and fast. Normally people avoid dealerships for service, but this one is better than any repair shop out there. I had one issue several other repair shops refused to look at and others couldn't fix, but this dealership had it fixed very inexpensively.",
+        "author": "G G",
+        "meta": "2 years ago",
+        "stars": 5
+      },
+      "r2": {
+        "text": "Bad news with an issue on my 807. Despite the complicated August period with a reduced team on holiday, perfect service. Part ordered and delivered in 24 hours, car ready in 48. Good service with a smile and understanding.",
+        "author": "PORTIER Gilles",
+        "meta": "5 years ago",
+        "stars": 5
+      },
+      "r3": {
+        "text": "Brilliant service. Air con, blower and heating packed up while on holiday; we called in unannounced and had it looked at and fully repaired in 24 hours. Very friendly. Bibiana Martinez on service reception was brilliant. I was lucky with warranty, but it is a main dealer, so expect to pay the going rate.",
+        "author": "Allen Kent",
+        "meta": "8 years ago",
+        "stars": 5
+      },
+      "r4": {
+        "text": "Great receptionist and the car was ready in great time after its annual service.",
+        "author": "Mark Tullett",
+        "meta": "3 years ago",
+        "stars": 5
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Where we are and how to find us",
+    "lead": "On Ronda d'Europa, 21-23, in Vilanova i la Geltrú. Call before coming so we can tell you whether there is room in the workshop that day.",
+    "addressLabel": "Address",
+    "phoneLabel": "Phone",
+    "phoneNote": "This is the workshop line. We do not take enquiries by WhatsApp.",
+    "webLabel": "Public listing",
+    "webValue": "View on Google Maps",
+    "mapNote": "The Google map only loads if you accept third-party cookies.",
+    "mapLoad": "Load the map",
+    "mapTitle": "Map showing Tallers Garcia Vilanova in Vilanova i la Geltrú",
+    "plusCodeLabel": "Plus Code",
+    "callCta": "Call the workshop"
+  },
+  "footer": {
+    "tagline": "Car workshop and dealer in Vilanova i la Geltrú.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "legalTitle": "Notice",
+    "legal": "This page is an information sheet for the workshop. For quotes, availability and any technical detail, call the workshop: nothing written here replaces an inspection of the car.",
+    "rights": "All rights reserved."
+  },
+  "cookies": {
+    "text": "We only use technical cookies needed for the site to work. If you accept, we also load the Google map and anonymous visit statistics.",
+    "accept": "Accept",
+    "reject": "Essential only",
+    "policy": "More information"
+  },
+  "a11y": {
+    "langSwitch": "Change language",
+    "menuToggle": "Open navigation menu"
+  }
+}

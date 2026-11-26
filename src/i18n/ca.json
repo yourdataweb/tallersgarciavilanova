@@ -1,0 +1,180 @@
+{
+  "lang": "ca",
+  "locale": "ca_ES",
+  "ogLocale": "ca_ES",
+  "pathPrefix": "./",
+  "countryName": "Espanya",
+  "meta": {
+    "title": "Tallers Garcia Vilanova · Taller i concessionari a Vilanova i la Geltrú",
+    "description": "Taller de mecànica i concessionari a la Ronda d'Europa, 21-23, Vilanova i la Geltrú. Reparacions, revisions i aire condicionat. Demana hora al 938 14 55 50.",
+    "ogAlt": "Tallers Garcia Vilanova, taller de mecànica a Vilanova i la Geltrú"
+  },
+  "brand": {
+    "sub": "Taller · Vilanova i la Geltrú"
+  },
+  "nav": {
+    "skip": "Ves al contingut principal",
+    "label": "Navegació principal",
+    "services": "Serveis",
+    "trust": "Per què nosaltres",
+    "appointment": "Demanar hora",
+    "reviews": "Opinions",
+    "contact": "Contacte"
+  },
+  "hero": {
+    "eyebrow": "Ronda d'Europa, 21-23 · Vilanova i la Geltrú",
+    "title": "El teu cotxe, en mans d'un taller que hi és quan el necessites",
+    "subtitle": "Mecànica, revisions i aire condicionat en un taller de concessionari amb equip propi. Truca'ns, explica'ns què passa i et donem dia per deixar el cotxe.",
+    "callLabel": "Truca al taller",
+    "ctaSecondary": "Com arribar-hi",
+    "ratingWord": "sobre 5",
+    "ratingReviews": "opinions a Google",
+    "cardTitle": "Abans de venir",
+    "point1": "Hora per telèfon; no cal cita per escrit",
+    "point2": "Peces originals i terminis curts quan hi ha estoc",
+    "point3": "T'expliquem què s'ha fet i per què, abans de pagar",
+    "viewOnGoogle": "Veure la fitxa a Google",
+    "photoAlt": "Entrada del taller Tallers Garcia Vilanova a la Ronda d'Europa, Vilanova i la Geltrú",
+    "photoCredit": "Foto"
+  },
+  "features": {
+    "eyebrow": "Serveis",
+    "title": "Què hi pots portar a fer",
+    "lead": "Feina de taller de sempre, feta amb equip de concessionari: des d'un canvi d'oli fins a una avaria elèctrica que altres tallers no han sabut resoldre.",
+    "note": "Si el que necessites no apareix aquí, truca i ho mirem: és millor una trucada de dos minuts que un viatge en va.",
+    "items": {
+      "repair": {
+        "title": "Reparacions de mecànica",
+        "text": "Avaries de motor, frens, suspensió i transmissió. Ens han arribat cotxes que altres tallers havien rebutjat i n'han sortit resolts."
+      },
+      "service": {
+        "title": "Revisions i canvi d'oli",
+        "text": "Manteniment periòdic amb els intervals del fabricant. És la feina més habitual del taller i la que menys espera."
+      },
+      "climate": {
+        "title": "Aire condicionat i calefacció",
+        "text": "Carregar el gas, trobar fuites i arreglar ventilador o escalfament quan deixen de funcionar de cop, també a l'estiu."
+      },
+      "diagnose": {
+        "title": "Diagnosi d'avaries difícils",
+        "text": "Quan el cotxe fa una cosa estranya i ningú no troba el perquè, hi dediquem el temps que calgui abans de canviar peces a cegues."
+      },
+      "parts": {
+        "title": "Peces originals",
+        "text": "Treballem amb recanvis originals. En un cas documentat, la peça va arribar en 24 hores i el cotxe va estar llest en 48."
+      },
+      "warranty": {
+        "title": "Garantia i factura clara",
+        "text": "Som taller de concessionari: les reparacions cobertes per garantia es tramiten aquí mateix i la factura detalla mà d'obra i peces."
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Per què nosaltres",
+    "title": "Un taller gran amb tracte de barri",
+    "lead": "Tallers Garcia Vilanova és a la Ronda d'Europa, a tocar de l'entrada de Vilanova. És un taller de concessionari, amb la logística de peces i el personal que això comporta, però el tracte que la gent recorda a les opinions és el d'una recepció que agafa el telèfon i et diu les coses clares.",
+    "body1": "Les opinions que més es repeteixen parlen del mateix: algú va arribar sense hora, amb el cotxe ple de problemes i de vacances, i en va sortir amb el cotxe arreglat en un o dos dies. També parlen de la Bibiana, a recepció, que és qui agafa el telèfon quan truques.",
+    "body2": "No som el taller més barat i no ho amaguem: com a concessionari treballem amb tarifes oficials. El que sí que fem és dir-te què costarà abans de començar i no inventar feina que el cotxe no necessita.",
+    "trust1": "Equip propi de mecànics, no una cadena de serveis externs",
+    "trust2": "Recanvis originals i accés directe a la logística de fàbrica",
+    "trust3": "T'avisem si la reparació no compensa, abans de fer-la",
+    "statRatingLabel": "Valoració",
+    "statRating": "mitjana a Google",
+    "statReviewsLabel": "Opinions",
+    "statReviews": "reviews acumulades",
+    "statTypeLabel": "Tipus",
+    "statTypeValue": "Concessionari",
+    "statType": "taller i venda",
+    "statPlaceLabel": "On som",
+    "statPlaceValue": "Vilanova",
+    "statPlace": "Ronda d'Europa",
+    "statsNote": "La mitjana és de 4,1 sobre 5 amb 365 opinions. No és perfecta i no la maquillem: hi ha gent a qui una reparació li ha costat més del que esperava, i ho diem."
+  },
+  "menu": {
+    "eyebrow": "Demanar hora",
+    "title": "Com funciona, en tres passos",
+    "lead": "No tenim formulari de reserves: el telèfon és més ràpid i et podem preguntar el que calgui abans de fer-te desplaçar.",
+    "callLabel": "Telèfon del taller",
+    "note": "Si el cotxe no arrenca o no pots moure'l, digues-ho a la trucada: ho mirem abans de donar-te dia.",
+    "items": {
+      "step1": {
+        "title": "Truca i explica què passa",
+        "text": "Soroll, llum al quadre, una revisió que toca, l'aire que no refreda. Amb això ja et podem dir si cal venir o si és cosa de dos minuts."
+      },
+      "step2": {
+        "title": "Et donem dia i hora",
+        "text": "Et diem quin dia portar-lo i, si és una feina curta, si pots esperar-hi. Si calen peces, et diem quan arribaran abans de desmuntar res."
+      },
+      "step3": {
+        "title": "Recull-lo amb el compte clar",
+        "text": "Quan estigui llest, t'expliquem què s'ha canviat i què no. Si durant la feina apareix una cosa greu, et truquem abans de continuar."
+      }
+    }
+  },
+  "reviews": {
+    "eyebrow": "Opinions",
+    "title": "Què diu qui hi ha portat el cotxe",
+    "lead": "Extractes d'opinions publicades a Google per clients del taller. Hi ha de tot: gent contenta i gent a qui la factura li va semblar alta.",
+    "readAll": "Llegeix totes les opinions a Google",
+    "starsLabel": "{n} de 5 estrelles",
+    "items": {
+      "r1": {
+        "text": "Bon lloc per reparar el Peugeot o canviar-hi l'oli. Molt coneixedors i ràpids. Normalment la gent evita els concessionaris per al servei, però aquest és millor que qualsevol altre taller. Tenia una avaria que uns quants tallers es van negar a mirar i d'altres no van saber arreglar, i aquí la van resoldre per molt poc.",
+        "author": "G G",
+        "meta": "Fa 2 anys",
+        "stars": 5
+      },
+      "r2": {
+        "text": "Una mala notícia amb el meu 807. Tot i l'agost, amb l'equip reduït per vacances, servei perfecte: peça demanada i rebuda en 24 hores, cotxe a punt en 48. Bon servei, amb somriure i comprensió.",
+        "author": "PORTIER Gilles",
+        "meta": "Fa 5 anys",
+        "stars": 5
+      },
+      "r3": {
+        "text": "Servei excel·lent. De vacances, se'ns van espatllar l'aire, el ventilador i la calefacció; vam arribar sense avisar i ens ho van mirar i arreglar del tot en 24 hores. Molt amables. La Bibiana Martínez, a recepció, va ser brillant. Vaig tenir sort amb la garantia, però és un concessionari: és normal pagar la tarifa que toca.",
+        "author": "Allen Kent",
+        "meta": "Fa 8 anys",
+        "stars": 5
+      },
+      "r4": {
+        "text": "Molt bona recepció i el cotxe a punt en bon temps després de la revisió anual.",
+        "author": "Mark Tullett",
+        "meta": "Fa 3 anys",
+        "stars": 5
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contacte",
+    "title": "On som i com ens trobes",
+    "lead": "A la Ronda d'Europa, 21-23, a Vilanova i la Geltrú. Truca abans de venir: així et podem dir si aquell dia hi ha lloc al taller.",
+    "addressLabel": "Adreça",
+    "phoneLabel": "Telèfon",
+    "phoneNote": "Aquest és el número del taller. No atenem consultes per WhatsApp.",
+    "webLabel": "Fitxa pública",
+    "webValue": "Veure'l a Google Maps",
+    "mapNote": "El mapa de Google només es carrega si acceptes les galetes de tercers.",
+    "mapLoad": "Carrega el mapa",
+    "mapTitle": "Mapa amb la ubicació de Tallers Garcia Vilanova a Vilanova i la Geltrú",
+    "plusCodeLabel": "Plus Code",
+    "callCta": "Trucar al taller"
+  },
+  "footer": {
+    "tagline": "Taller de mecànica i concessionari a Vilanova i la Geltrú.",
+    "navTitle": "Navegació",
+    "contactTitle": "Contacte",
+    "legalTitle": "Avís",
+    "legal": "Aquesta pàgina és una fitxa informativa del taller. Per a pressupostos, disponibilitat i qualsevol detall tècnic, truca al taller: el que hi ha escrit aquí no substitueix una revisió del cotxe.",
+    "rights": "Tots els drets reservats."
+  },
+  "cookies": {
+    "text": "Només fem servir galetes tècniques perquè la web funcioni. Si acceptes, també carreguem el mapa de Google i estadístiques anònimes de visites.",
+    "accept": "Accepta",
+    "reject": "Només essencials",
+    "policy": "Més informació"
+  },
+  "a11y": {
+    "langSwitch": "Canviar d'idioma",
+    "menuToggle": "Obre el menú de navegació"
+  }
+}
