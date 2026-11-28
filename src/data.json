@@ -76,5 +76,8 @@
   "light": "#a3bcc6",
   "manifestTheme": "#101b21",
   "manifestBackground": "#f8f7f4",
-  "paper": "#f8f7f4"
+  "paper": "#f8f7f4",
+  "offerEnds": "2027-02-26",
+  "buyUrl": "",
+  "offerEmail": ""
 }
